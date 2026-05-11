@@ -4,16 +4,34 @@
 int main()
 {
     int hora, min;
-
+    //Solicita valores de entrada
     printf("Digite o horario em que voce deseja chegar (HH MM): ");
     scanf("%d %d", &hora, &min);
     
-    hora--;
-    if (hora < 0){
-        hora = 23;
+    //Valida as horas
+    while (hora < 0 || hora > 24){
+        printf("Hora inválida!Digite um horario valido: ");
+        scanf("%d", &hora);
     }
-    
-    printf("Horario correspondente a uma hora antes: %d:%d", hora, min);
-
+    //Admite 00h00 == 24h00
+    if (hora == 0)
+    {
+        hora = 24;
+    }
+    //Valida os minutos
+    while (min < 0){
+        printf("Minuto inválido!Digite minuto valido: ");
+        scanf("%d", &min);
+    }
+    /*Normaliza minutos >= 60: subtrai 60 a cada iteração
+    e incrementa a hora correspondente.
+       Exemplo: 14:75 → hora--, min = 75-60 = 15, hora = 14:15*/
+    while (min >= 60){
+        min -= 60;
+        hora ++;
+    }
+    //Subtrai uma hora para obter o horário de chegada antecipado
+    hora--;
+    printf("Horario correspondente a uma hora antes: %d:%02d", hora, min);
     return 0;
 }
