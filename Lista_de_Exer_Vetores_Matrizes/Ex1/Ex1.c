@@ -19,10 +19,12 @@ for(int i=0; i<10;i++){
         // Variável contador recebi 1 cada vez que a condição é satisfeita
         cont ++;
         }
-}
-//Calcula a média
-media = media/cont;
-//Exibi a média com duas casas após a vírgula
-printf("A média funcional da turma é %.2f.", media);
+    }
+//Condição que checa se a divisão é válida
+if (cont > 0)
+    printf("A média funcional da turma é %.2f.", media / cont);
+else
+    printf("Nenhum aluno foi aprovado.");
+
 return 0;
 }
