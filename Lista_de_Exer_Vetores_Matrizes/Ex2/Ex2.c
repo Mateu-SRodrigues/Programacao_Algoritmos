@@ -8,20 +8,22 @@ int main() {
 	float m_perfeita = 0;
 	int cont = 0;
 
-	for(int i=0; i<15; i++) {
-		printf("Digite a nota do aluno %d: ", i+1);
-		scanf("%f", &notas[i]);
-		m_perfeita += notas[i];
-		cont ++;
-	}
+	for(int i = 0; i<15; i++) {
+        do{
+            printf("Digite a nota do aluno %d: ", i+1);
+            scanf("%f", &notas[i]);
+            if (notas[i] < 0)
+                printf("Nota inválida! Digite-a novamente: ");
+        } while (notas[i] < 0);
+
+        m_perfeita += notas[i];
+        cont ++;
+    }
 	m_perfeita = m_perfeita/cont;
 
-	if(m_perfeita > 8) {
+	if(m_perfeita > 8)
 		m_perfeita = 10;
-		printf("A média perfeita da turma é %.2f.", m_perfeita);
-	}
-	else
-		printf("A média perfeita da turma é %.2f.", m_perfeita);
+	printf("A média perfeita da turma é %.2f.", m_perfeita);
 
 	return 0;
 }
