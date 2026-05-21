@@ -22,6 +22,12 @@ int main() {
 			cont++;
 		}
 	}
-    media = media/cont;
-    printf("A média dos lucros é: %.2f", media);
+	if (cont == 0){
+		printf("Nenhum lucro registrado!");
+	}
+	else{
+		media = media/cont;
+    	printf("A média dos lucros é: %.2f", media);
+	}
+    
 }
