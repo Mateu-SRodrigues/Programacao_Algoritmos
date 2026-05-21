@@ -10,18 +10,18 @@ int main() {
 	float filiais[20];
 	float media = 0;
 	int cont  = 0;
-
 	for(int i = 0; i<20; i++) {
 		printf("Digite o lucro da filial %d: ", i+1);
 		scanf("%f", &filiais[i]);
 	}
 	for(int j = 0; j<20; j++) {
 		if(filiais[j] > 0) {
-			printf("Empresas que dao lucro (filial %f): %f", filiais[j]);
+			printf("Empresas que dao lucro (filial %d): %.2f \n", j+1, filiais[j]);
 			media += filiais[j];
 			cont++;
 		}
 	}
+	//
 	if (cont == 0){
 		printf("Nenhum lucro registrado!");
 	}
