@@ -19,7 +19,7 @@ int main() {
 
             //Condição que invalída notas < 0 e solicita novamente a entrada
             if (notas[i] < 0)
-                printf("Nota inválida! Digite-a novamente: ");
+                printf("Nota inválida!\n");
         } while (notas[i] < 0); /*Enquanto a condição for V: o programa volta para o do{} e repete o processo.
                                   Se a condição for F: o laço é encerrado e o código segue adiante.;*/
 
